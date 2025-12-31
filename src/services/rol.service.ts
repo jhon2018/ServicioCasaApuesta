@@ -6,7 +6,10 @@ import { Rol, RolWithUsuarios } from "../models/rol.model";
 export class RolService {
     // 1. Crear rol
     static async createRol(nombre: string, usuarioId: number): Promise<Rol> {
+        const client = await pool.connect();
+        await client.query('BEGIN');
         const result = await pool.query(rolQueries.insert, [nombre, usuarioId, usuarioId]);
+        await client.query('COMMIT');
         return result.rows[0];
     }
 

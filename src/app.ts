@@ -3,6 +3,7 @@
 
 import dotenv from 'dotenv';
 import rolRoutes from "./routes/rol.routes";
+import usuarioRoutes from "./routes/usuario.routes";
 dotenv.config();
 import express from 'express';
 import morgan from 'morgan';
@@ -14,6 +15,7 @@ app.use(express.json());
 const prefix = '/api/v1';
 
 app.use(`${prefix}/roles`, rolRoutes);
+app.use(`${prefix}/usuarios`, usuarioRoutes);
 
 app.listen(3000, () => {
     console.log('Servidor Respondiendo en el puerto 3000');
