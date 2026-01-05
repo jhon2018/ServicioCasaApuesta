@@ -10,6 +10,8 @@ npm install -D @types/pg ts-node typescript
 npm install morgan @types/morgan
 npm install joi
 npm install -D @types/joi
+npm install bcryptjs jsonwebtoken nodemailer
+npm install -D @types/bcryptjs @types/jsonwebtoken @types/nodemailer
 
 # ejecuta el archivo test-connection.ts (si tienes conexion al servidor RENDER)
 npm run test:db
