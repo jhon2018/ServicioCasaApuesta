@@ -3,7 +3,7 @@
 import Joi from "joi";
 
 export const usuarioCreateSchema = Joi.object({
-    tipo_usuario: Joi.string().valid('admin', 'operador', 'cliente').required(),
+    tipo_usuario: Joi.string().valid('Administrador', 'Operador', 'Cliente').required(),
     nombre: Joi.string().min(3).max(50).required(),
     telefono: Joi.string().min(9).max(15).required(),
     correo_electronico: Joi.string().email().required(),
@@ -12,7 +12,7 @@ export const usuarioCreateSchema = Joi.object({
 });
 
 export const usuarioUpdateSchema = Joi.object({
-    tipo_usuario: Joi.string().valid('admin', 'operador', 'cliente'),
+    tipo_usuario: Joi.string().valid('Administrador', 'Operador', 'Cliente'),
     nombre: Joi.string().min(3).max(50),
     telefono: Joi.string().min(9).max(15),
     correo_electronico: Joi.string().email(),

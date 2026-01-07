@@ -20,8 +20,9 @@ export const createRol = async (req: Request, res: Response) => {
         }
 
         // Obtener usuario que crea (de JWT)
-        const usuarioCreacion = 1; // TODO: Obtener de req.user después de auth
-        
+        //const usuarioCreacion = 1;
+        const usuarioCreacion = (req as any).user.id;
+
         const rol = await RolService.createRol(value.nombre, usuarioCreacion);
         res.status(STATUS_CREATED)
            .json(BaseResponse.success(rol, RESPONSE_INSERT_OK));

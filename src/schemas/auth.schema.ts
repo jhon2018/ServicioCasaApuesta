@@ -8,7 +8,7 @@ export const registroSchema = Joi.object({
     email: Joi.string().email().required(),
     nombre: Joi.string().min(3).max(50).required(),
     telefono: Joi.string().min(9).max(15).required(),
-    tipo_usuario: Joi.string().valid('admin', 'operador', 'cliente').default('cliente')
+    tipo_usuario: Joi.string().valid('Administrador', 'Operador', 'Cliente').default('cliente')
 });
 
 export const loginSchema = Joi.object({
